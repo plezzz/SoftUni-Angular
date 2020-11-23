@@ -6,6 +6,7 @@ import { Component, OnInit } from '@angular/core';
   styleUrls: ['./theme.component.css']
 })
 export class ThemeComponent implements OnInit {
+  title = 'Recent posts';
 
   constructor() { }
 

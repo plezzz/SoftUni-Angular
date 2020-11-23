@@ -1,10 +1,10 @@
 import {Injectable} from '@angular/core';
-import {environment} from '../../environments/environment';
 import {HttpClient} from '@angular/common/http';
-import {Observable} from 'rxjs';
 import {IPost, ITheme} from '../shared/interfaces';
+import {Observable} from 'rxjs';
+import {environment} from '../../environments/environment';
 
-const apiURL = environment.apiURL;
+const apiUrl = environment.apiURL;
 
 @Injectable()
 export class ThemeService {
@@ -13,10 +13,11 @@ export class ThemeService {
   }
 
   loadThemeList(): Observable<ITheme[]> {
-    return this.http.get<ITheme[]>(`${apiURL}/themes`);
+    return this.http.get<ITheme[]>(`${apiUrl}/themes`);
   }
 
   loadTheme(id: string): Observable<ITheme<IPost>> {
-    return this.http.get<ITheme<IPost>>(`${apiURL}/themes/${id}`);
+    return this.http.get<ITheme<IPost>>(`${apiUrl}/themes/${id}`);
   }
+
 }
